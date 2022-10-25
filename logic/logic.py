@@ -75,10 +75,17 @@ class Logic:
         self.load_and_parse_item_requirements()
         self.item_locations = self.load_and_parse_item_data()
 
-        self.required_dungeons = self.randomize_required_dungeons()
-        self.unrequired_dungeons = [
+        #If assigning dungeons to beat.
+        if True:
+            self.required_dungeons = self.randomize_required_dungeons()
+            self.unrequired_dungeons = [
             d for d in POTENTIALLY_REQUIRED_DUNGEONS if d not in self.required_dungeons
-        ]
+            ]
+        #If no specific dungeons are assigned.
+        else:
+            pass
+
+
         self.entrance_connections = self.randomize_entrance_connections()
         self.trial_connections = self.randomize_trial_entrances()
         self.starting_items = self.randomize_starting_items()
@@ -349,6 +356,22 @@ class Logic:
         self.randomize_consumable_items()
 
     def randomize_required_dungeons(self):
+        """
+        Selects the required dungeons randomly based on options
+        and returns them in a list
+        """
+        required_dungeons = self.rando.rng.sample(
+            POTENTIALLY_REQUIRED_DUNGEONS,
+            k=self.rando.options["required-dungeon-count"],
+        )
+        # make the order always consistent
+        return [
+            dungeon
+            for dungeon in POTENTIALLY_REQUIRED_DUNGEONS
+            if dungeon in required_dungeons
+        ]
+
+    def randomize_beaten_dungeons(self):
         """
         Selects the required dungeons randomly based on options
         and returns them in a list

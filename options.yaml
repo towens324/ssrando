@@ -71,6 +71,12 @@
   bits: 3
   help: The number of dungeons that are required, to beat the seed
   ui: option_required_dungeon_count
+- name: Any Dungeon Counts Towards Count
+  command: any-dungeon-counts
+  type: boolean
+  default: false
+  help: Allows you to beat any dungeon that counts towards the set count.
+  ui: option_any_dungeon_counts
 - name: Imp 2
   command: imp2-skip
   type: boolean
