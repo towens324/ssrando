@@ -75,15 +75,19 @@ class Logic:
         self.load_and_parse_item_requirements()
         self.item_locations = self.load_and_parse_item_data()
 
+        #If no specific dungeons are assigned.
+        if self.rando.options["any-dungeon-counts"]:
+            self.required_dungeons = self.randomize_beaten_dungeons()
+            self.unrequired_dungeons = [
+            d for d in POTENTIALLY_REQUIRED_DUNGEONS if d not in self.required_dungeons
+            ]
+
         #If assigning dungeons to beat.
-        if True:
+        else:
             self.required_dungeons = self.randomize_required_dungeons()
             self.unrequired_dungeons = [
             d for d in POTENTIALLY_REQUIRED_DUNGEONS if d not in self.required_dungeons
             ]
-        #If no specific dungeons are assigned.
-        else:
-            pass
 
 
         self.entrance_connections = self.randomize_entrance_connections()

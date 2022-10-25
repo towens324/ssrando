@@ -64,7 +64,7 @@
      <string/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -817,16 +817,19 @@
         <height>251</height>
        </rect>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="title">
        <string>Gate of Time and Horde Door</string>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>19</y>
-         <width>181</width>
-         <height>221</height>
+         <x>0</x>
+         <y>20</y>
+         <width>201</width>
+         <height>235</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -903,14 +906,46 @@
          </layout>
         </item>
         <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0">
+          <property name="leftMargin">
+           <number>1</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="option_any_dungeon_counts">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>Any Dungeon Counts</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
          <spacer name="verticalSpacer_3">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
-            <height>40</height>
+            <width>40</width>
+            <height>20</height>
            </size>
           </property>
          </spacer>

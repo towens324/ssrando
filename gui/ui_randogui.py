@@ -515,9 +515,10 @@ class Ui_MainWindow(object):
         self.groupBox_5 = QGroupBox(self.tab_4)
         self.groupBox_5.setObjectName(u"groupBox_5")
         self.groupBox_5.setGeometry(QRect(10, 10, 201, 251))
+        self.groupBox_5.setLayoutDirection(Qt.LeftToRight)
         self.verticalLayoutWidget = QWidget(self.groupBox_5)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(10, 19, 181, 221))
+        self.verticalLayoutWidget.setGeometry(QRect(0, 20, 201, 235))
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -588,7 +589,24 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.verticalLayout_5)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.horizontalLayout_13 = QHBoxLayout()
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalLayout_13.setContentsMargins(1, -1, -1, -1)
+        self.option_any_dungeon_counts = QCheckBox(self.verticalLayoutWidget)
+        self.option_any_dungeon_counts.setObjectName(u"option_any_dungeon_counts")
+        self.option_any_dungeon_counts.setEnabled(True)
+        sizePolicy2.setHeightForWidth(self.option_any_dungeon_counts.sizePolicy().hasHeightForWidth())
+        self.option_any_dungeon_counts.setSizePolicy(sizePolicy2)
+        self.option_any_dungeon_counts.setLayoutDirection(Qt.LeftToRight)
+        self.option_any_dungeon_counts.setChecked(False)
+        self.option_any_dungeon_counts.setAutoExclusive(False)
+
+        self.horizontalLayout_13.addWidget(self.option_any_dungeon_counts)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_13)
+
+        self.verticalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer_3)
 
@@ -1206,7 +1224,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(2)
         self.option_randomize_entrances.setCurrentIndex(-1)
         self.option_triforce_shuffle.setCurrentIndex(-1)
 
@@ -1294,6 +1312,7 @@ class Ui_MainWindow(object):
         self.label_for_option_got_sword_requirement.setText(QCoreApplication.translate("MainWindow", u"Sword Requirement", None))
         self.label_for_option_got_dungeon_requirement.setText(QCoreApplication.translate("MainWindow", u"Dungeon Requirement", None))
         self.label_for_option_required_dungeon_count.setText(QCoreApplication.translate("MainWindow", u"Required Dungeons", None))
+        self.option_any_dungeon_counts.setText(QCoreApplication.translate("MainWindow", u"Any Dungeon Counts", None))
         self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"Dungeons", None))
         self.label_for_option_map_mode.setText(QCoreApplication.translate("MainWindow", u"Map Mode", None))
         self.label_for_option_small_key_mode.setText(QCoreApplication.translate("MainWindow", u"Small Keys", None))
